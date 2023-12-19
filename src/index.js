@@ -1,1 +1,1 @@
-console.log('Index.js')
+import './formulario'
