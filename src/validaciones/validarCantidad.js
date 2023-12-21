@@ -6,6 +6,7 @@ const validarCantidad = () => {
 
     // Obtenemos el input de cantidad
     const inputCantidad = formulario.cantidad
+
     if (expRegCantidad.test(inputCantidad.value)) {
         inputCantidad.classList.remove('formulario__input--error')
         return true
