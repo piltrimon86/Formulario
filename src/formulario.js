@@ -79,9 +79,22 @@ btnFormulario.addEventListener('click', (e) => {
 
         siguientePaso()
 
-        // Eliminamos ka ckase de disabled después de 4 segundos
+        // Eliminamos la ckase de disabled después de 4 segundos
         setTimeout(() => {
             btnFormulario.classList.remove('formulario__btn--disabled')
+        }, 4000)
+    } else if (
+        pasoActual === 'confirmacion' &&
+        !btnFormulario.matches('.formulario__btn--disabled')
+    ) {
+        // Cambiamos el botón a 'Transfiriendo'
+        btnFormulario.querySelector('span').innerText = 'Transfiriendo'
+        // Hacemos que el botón se desactive una vexz se
+        btnFormulario.classList.add('formulario__btn--disabled')
+        // Ocultamos el formulario pasados 4 seg y mostramos la pantalla de 'Transferencia completada'
+        setTimeout(() => {
+            formulario.classList.add('formulario--hidden')
+            document.getElementById('alerta').classList.add('alerta--active')
         }, 4000)
     }
 })
