@@ -37,6 +37,23 @@ linea.addEventListener('click', (e) => {
             .querySelector(`[data-paso="${id}"] span`)
             .classList.add('linea-pasos__paso-check--active')
 
+        // Nnos aseguramos de que el texto del botón sea "Siguiente"
+        const btnFormulario = document.querySelector('#formulario__btn')
+        btnFormulario.querySelector('span').innerText = 'Siguiente'
+
+        // Ocultamos el icono de "Banco"
+        btnFormulario
+            .querySelector('[data-icono="banco"]')
+            .classList.remove('formulario__btn-contenedor-icono--active')
+
+        // Mostramos el icono de "Siguiente"
+        btnFormulario
+            .querySelector('[data-icono="siguiente"]')
+            .classList.add('formulario__btn-contenedor-icono--active')
+
+        //
+        btnFormulario.classList.remove('formulario__btn--disabled')
+
         // Navegamos al paso que queremos
         document
             .querySelector(`.formulario__body [data-paso="${id}"]`)
